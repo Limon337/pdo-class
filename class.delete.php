@@ -1,11 +1,12 @@
 <?php
-require 'database.php';
+require_once 'class.database.php';
 
 class Delete {
     private $pdo;
 
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
+    public function __construct() {
+        $db = new Database();
+        $this->pdo = $db->getConnection();
     }
 
     public function deleteUser($id) {

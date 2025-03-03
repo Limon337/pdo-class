@@ -1,18 +1,19 @@
 <?php
-require 'database.php';
+require_once 'class.database.php';
 
 class Manage {
     private $pdo;
 
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
+    public function __construct() {
+        $db = new Database();
+        $this->pdo = $db->getConnection();
     }
 
     // Method to get all users
     public function getUsers() {
         $sql = "SELECT * FROM users ORDER BY id DESC";
         $stmt = $this->pdo->query($sql);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Method to render the HTML table

@@ -1,10 +1,10 @@
 <?php
 class Database {
     private $host = "localhost"; 
-    private $port = "3308";       
+    private $port = "3306";       
     private $dbname = "pdo";      
     private $username = "root";  
-    private $password = ""; 
+    private $password = "";     
     private $pdo;
 
     public function __construct() {
@@ -19,7 +19,7 @@ class Database {
                                       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                                       PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
                                   ]);
-            echo "Database connected successfully!";
+            //echo "Database connected successfully!";
         } catch (PDOException $e) {
             die("Database connection failed: " . $e->getMessage()); 
         }

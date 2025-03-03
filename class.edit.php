@@ -1,14 +1,15 @@
 <?php
 
-require 'database.php';  // Include the db.php file to get the PDO object
+require_once 'class.database.php';  // Include the database.php file to get the PDO object
 
 // User class definition
 class Edit {
     private $pdo;
 
     // Constructor to initialize PDO
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
+    public function __construct() {
+        $db = new Database();
+        $this->pdo = $db->getConnection();
     }
 
     // Fetch user by ID
