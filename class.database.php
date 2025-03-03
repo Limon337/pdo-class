@@ -29,8 +29,3 @@ class Database {
         return $this->pdo; 
     }
 }
-
-// Initialize the Database class and return the PDO instance
-$database = new Database();
-$pdo = $database->getConnection();
-?>

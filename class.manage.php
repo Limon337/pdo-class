@@ -1,7 +1,7 @@
 <?php
-require 'db.php';
+require 'database.php';
 
-class User {
+class Manage {
     private $pdo;
 
     public function __construct($pdo) {
@@ -35,7 +35,4 @@ class User {
     }
 }
 
-// Instantiate the User class and render the table
-$user = new User($pdo);
-$user->renderUserTable();
 ?>

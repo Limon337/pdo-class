@@ -1,14 +1,8 @@
 <?php
-require 'db.php';
-
+include './class.delete.php';
+// Usage
+$user = new Delete($pdo);
 $id = $_GET['id'];
-
-$sql = "DELETE FROM users WHERE id = :id";
-$stmt = $pdo->prepare($sql);
-
-if ($stmt->execute(['id' => $id])) {
-    echo "User deleted successfully!";
-} else {
-    echo "Error deleting user!";
-}
+echo $user->deleteUser($id);
 ?>
+
